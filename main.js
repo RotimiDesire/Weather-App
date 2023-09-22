@@ -38,7 +38,14 @@ async function getWeatherData(cityValue) {
       (detail) => `<span>${detail}</span>`
     );
   } catch (error) {
-    console.error(error);
+    weatherData.querySelector(".icon").innerHTML = "";
+
+    weatherData.querySelector(".temperature").textContent = "";
+
+    weatherData.querySelector(".description").textContent =
+      "An error occured, try again.";
+
+    weatherData.querySelector(".details").innerHTML = "";
   }
 }
 
